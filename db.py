@@ -107,6 +107,8 @@ def encode(data):
 
 
 def reg_to_bd(message):
+    connect = sqlite3.connect('bot.db')
+    cursor = connect.cursor()
     if get_elgur(login, password) == None:
         bot.send_message(message.from_user.id, 'Кхмм... Пароль неверный! Введи нормально.')
         reg(message)
