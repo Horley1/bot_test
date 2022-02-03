@@ -41,6 +41,8 @@ def reg(message):
 
 
 def check_bd(message):
+    connect = sqlite3.connect('/Users/maksimkalmykov/bot.db')
+    cursor = connect.cursor()
     if cursor.execute(f"SELECT * FROM data WHERE user_id={message.chat.id}").fetchone():
         return True
     else:
