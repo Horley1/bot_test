@@ -15,7 +15,7 @@ def start_message(message):
     bot.send_message(message.chat.id, 'Привет! Если ты ещё не зарегался пиши: "/reg". Иначе пиши "/parse" для старта парсинга!')
 @bot.message_handler(commands=['parse'])
 def start_parsing(message):
-    connect = sqlite3.connect('/Users/maksimkalmykov/bot.db')
+    connect = sqlite3.connect('bot.db')
     cursor = connect.cursor()
     print(cursor.execute(f"SELECT * FROM data WHERE user_id={message.chat.id}").fetchone())
     if cursor.execute(f"SELECT * FROM data WHERE user_id={message.chat.id}").fetchone():
@@ -41,7 +41,7 @@ def reg(message):
 
 
 def check_bd(message):
-    connect = sqlite3.connect('/Users/maksimkalmykov/bot.db')
+    connect = sqlite3.connect('bot.db')
     cursor = connect.cursor()
     if cursor.execute(f"SELECT * FROM data WHERE user_id={message.chat.id}").fetchone():
         return True
