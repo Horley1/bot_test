@@ -8,7 +8,20 @@ import time
 from datetime import datetime
 bot = telebot.TeleBot('5199364372:AAGnaM9JbpyH2_JjTpCi1zb3EN5nWUtiwmE')
 connect = sqlite3.connect('bot.db')
+
 cursor = connect.cursor()
+cursor.execute("""CREATE TABLE IF NOT EXISTS data (
+user_id INTEGER UNIQUE NOT NULL,
+login STRING,
+pass STRING,
+token STRING,
+last_marks STRING,
+day INTEGER,
+month INTEGER,
+year INTEGER
+);""")
+connect.commit()
+
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
