@@ -8,7 +8,7 @@ from datetime import datetime
 from fernet import *
 
 bot = telebot.TeleBot('5199364372:AAGnaM9JbpyH2_JjTpCi1zb3EN5nWUtiwmE')
-connect = sqlite3.connect('/Users/maksimkalmykov/bot.db')
+connect = sqlite3.connect('bot.db')
 cursor = connect.cursor()
 
 def parsing_process(message_id):
