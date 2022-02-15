@@ -96,12 +96,12 @@ def add_to_bd(message_id, new_list):
     cursor.execute(f"UPDATE data SET last_marks = {values[1]} WHERE user_id = {values[0]}")
     connect.commit()
 
-test = cursor.execute("SELECT user_id FROM data").fetchall()
+#test = cursor.execute("SELECT user_id FROM data").fetchall()
 while True:
-    for elem in test:
-        try:
-            parsing_process(elem[0])
-        except:
-            pass
-    time.sleep(30)
+    #for elem in test:
+    #    try:
+    #        parsing_process(elem[0])
+    #    except:
+    #        pass
+    #time.sleep(30)
     bot.send_message(327830972, "success")
