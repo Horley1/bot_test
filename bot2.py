@@ -87,10 +87,10 @@ def add_to_bd(message_id, new_list):
 
 test = cursor.eaxecute("SELECT user_id FROM data").fetchall()
 while True:
-    for elem in test:
-        try:
-            parsing_process(elem[0])
-        except:
-            pass
+#     for elem in test:
+#         try:
+#             parsing_process(elem[0])
+#         except:
+#             pass
     time.sleep(30)
     bot.send_message(327830972, "success")
