@@ -103,5 +103,5 @@ while True:
     #        parsing_process(elem[0])
     #    except:
     #        pass
-    #time.sleep(30)
+    time.sleep(15)
     bot.send_message(327830972, "success")
