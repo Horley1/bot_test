@@ -1,1 +1,1 @@
-web: python3 tg_test.py
+bot: python3 db.py
